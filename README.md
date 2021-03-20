@@ -43,3 +43,9 @@ Flow of the Application:
  -CRON jobs will provide daily reminders using push notifications. 
 
 ```
+
+## Requirements to run the project
+ - Node.js
+ - MongoDB
+ - Flutter
+ - Redis
