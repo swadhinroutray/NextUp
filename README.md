@@ -1,4 +1,4 @@
-# NextUP: A Project Management Tool
+# NextUp: A Project Management Tool
 
 - To get started:
 ```sh
@@ -49,3 +49,14 @@ Flow of the Application:
  - MongoDB
  - Flutter
  - Redis
+
+ ## Board Structure 
+ ##### Stages 
+ - 1: Ideation 
+ - 2: Planning 
+ - 3: Development 
+ - 4: Review 
+ - 5: Analysis 
+
+
+The first four stages will be in the in progress tab and the Analysis stage will be pushed into the Completed Tab.
