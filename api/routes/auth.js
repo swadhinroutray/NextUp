@@ -5,7 +5,7 @@ const response = require("../utils/responseHandler");
 
 async function Register(req, res) {
   try {
-    const salt = await bcrypt.genSalt(process.env.SALT_FACTOR);
+    const salt = await bcrypt.genSalt(parseInt(process.env.SALT_FACTOR));
     bcrypt.hash(req.body.password, salt).then(async (hash) => {
       const newUser = new user({
         userID: uuid(),
@@ -48,7 +48,7 @@ async function Login(req, res) {
           req.session.email = req.body.email;
           req.session.name = result.name;
           req.session.logged_in = true;
-          req.session.userdID = result.userID;
+          req.session.userID = result.userID;
           // console.log(req.session)
           return response.sendResponse(res, "Logged In");
         }
@@ -59,7 +59,7 @@ async function Login(req, res) {
     }
   } catch (e) {
     console.log(e);
-    return response.sendError(res, "An error Occured" + e);
+    return response.sendError(res, "An error Occured " + e);
   }
 }
 

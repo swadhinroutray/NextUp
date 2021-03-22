@@ -5,6 +5,8 @@ var upload = multer({ storage: storage });
 const hello = require("./hello");
 const auth = require("./auth");
 
+const pro = require("../controllers/projectController");
+
 function isLoggedin(req, res, next) {
   if (req.session) {
     if (req.session.logged_in == true) {
@@ -24,5 +26,11 @@ router.get("/hello", isLoggedin, hello.hello);
 router.post("/register", auth.Register);
 router.post("/login", auth.Login);
 router.post("/logout", isLoggedin, auth.Logout);
+
+//* Project Controller routes
+router.post("/createproject", isLoggedin, pro.createProject);
+router.post("/deleteproject", isLoggedin, pro.deleteProject);
+router.post("/changedeadline", isLoggedin, pro.editDeadline);
+router.post("/changetitle", isLoggedin, pro.changeProjectTitle);
 
 module.exports = router;

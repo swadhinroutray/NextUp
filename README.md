@@ -55,7 +55,7 @@ Flow of the Application:
  - 1: Ideation 
  - 2: Planning 
  - 3: Development 
- - 4: Review 
+ - 4: Review / Testing
  - 5: Analysis 
 
 
