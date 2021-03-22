@@ -4,7 +4,7 @@ var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
 const hello = require("./hello");
 const auth = require("./auth");
-
+const task = require("../controllers/taskController");
 const pro = require("../controllers/projectController");
 
 function isLoggedin(req, res, next) {
@@ -32,5 +32,10 @@ router.post("/createproject", isLoggedin, pro.createProject);
 router.post("/deleteproject", isLoggedin, pro.deleteProject);
 router.post("/changedeadline", isLoggedin, pro.editDeadline);
 router.post("/changetitle", isLoggedin, pro.changeProjectTitle);
+
+//* Task Controller routes
+router.post("/addtask", isLoggedin, task.createTask);
+router.post("/edittasktitle", isLoggedin, task.editTaskTitle);
+router.post("/edittaskdescription", isLoggedin, task.editTaskDescription);
 
 module.exports = router;

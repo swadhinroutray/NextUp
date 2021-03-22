@@ -23,7 +23,13 @@ const user  = new mongoose.Schema({
     }, 
     projects:{//! Store Project title and ID
         type:Array,
-    } 
+    },
+    token:{ //! For Forgot Password Purposes
+        type: String
+    },
+    deviceID:{
+        type: String //! For push notifications
+    }
 });
 
 module.exports = mongoose.model("user",user)

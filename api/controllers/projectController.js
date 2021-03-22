@@ -75,33 +75,34 @@ async function editDeadline(req, res) {
     response.sendError(res, error);
   }
 }
-async function changeProjectTitle(req,res){
-    try {
-        const projectID = req.body.projectID;
-        const title = req.body.title.trim()
-        result = await project.updateOne(
-          {
-            projectID: projectID,
-          },
-          {
-            $set: { title: title },
-          }
-        );
-        if (!result) {
-          return response.sendError(
-            res,
-            "Error occured while Updating Title of the project"
-          );
-        }
-        return response.sendResponse(res, "Title changed successfully");   
-    } catch (error) {
-        console.log(error);
-        response.sendError(res, error);
+async function changeProjectTitle(req, res) {
+  try {
+    const projectID = req.body.projectID;
+    const title = req.body.title.trim();
+    result = await project.updateOne(
+      {
+        projectID: projectID,
+      },
+      {
+        $set: { title: title },
+      }
+    );
+    if (!result) {
+      return response.sendError(
+        res,
+        "Error occured while Updating Title of the project"
+      );
     }
+    return response.sendResponse(res, "Title changed successfully");
+  } catch (error) {
+    console.log(error);
+    response.sendError(res, error);
+  }
 }
+
 module.exports = {
   createProject,
   deleteProject,
   editDeadline,
-  changeProjectTitle
+  changeProjectTitle,
 };

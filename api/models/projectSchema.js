@@ -11,13 +11,19 @@ const taskSchema = new mongoose.Schema({
     //! Stages defined by number, Check README for the same.
     type: Number,
   },
-  attachemnts: {
+  attachments: {
     //! To attach a picture to the particular task
     type: Array,
   },
   token: {
     type: String, //* To Allow 2FA on moving stages.
   },
+  description:{
+    type:String
+  },
+  createdAt:{
+    type: Date
+  }
 });
 
 const projectSchema = new mongoose.Schema({
