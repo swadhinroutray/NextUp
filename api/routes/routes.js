@@ -37,5 +37,12 @@ router.post("/changetitle", isLoggedin, pro.changeProjectTitle);
 router.post("/addtask", isLoggedin, task.createTask);
 router.post("/edittasktitle", isLoggedin, task.editTaskTitle);
 router.post("/edittaskdescription", isLoggedin, task.editTaskDescription);
+router.post(
+  "/addattachment",
+  isLoggedin,
+  upload.array("files"),
+  task.addAttachmentToTask
+);
+router.post("/deleteattachment",isLoggedin,task.deleteAttachmentFromTask);
 
 module.exports = router;
