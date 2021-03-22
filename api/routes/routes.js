@@ -20,7 +20,7 @@ function isLoggedin(req, res, next) {
 }
 
 //*Test routes
-router.get("/hello", isLoggedin, hello.hello);
+router.get("/hello", hello.hello);
 
 //* Auth routes
 router.post("/register", auth.Register);
