@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const redisStore = require('./config/redis')(session);
 const routes =require('./routes/routes')
-
+const cors = require('cors')
 const AWS = require('aws-sdk');
 AWS.config.update({
 	Bucket:process.env.BUCKET_NAME,
@@ -20,7 +20,10 @@ AWS.config.update({
 s3 = new AWS.S3({apiVersion:"2006-03-01"})
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors())
+
 db.connectMongo()
+
 const sec_sess = session({
 	resave: false,
 	saveUninitialized: true,

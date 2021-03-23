@@ -8,3 +8,6 @@ api/package-*.json
 
 # Ignore node_modules
 api/node_modules
+
+# Ignore AWS CONFIG
+awsconfig.json

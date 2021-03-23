@@ -43,6 +43,15 @@ router.post(
   upload.array("files"),
   task.addAttachmentToTask
 );
-router.post("/deleteattachment",isLoggedin,task.deleteAttachmentFromTask);
-
+router.post("/deleteattachment", isLoggedin, task.deleteAttachmentFromTask);
+router.post(
+  "/initiatestagecompletion",
+  isLoggedin,
+  task.completeStageInitiation
+);
+router.post(
+  "/finishstagecompletion",
+  isLoggedin,
+  task.completeStageCheckAndPropagate
+);
 module.exports = router;
