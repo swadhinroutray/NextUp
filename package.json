@@ -1,0 +1,20 @@
+{
+  "name": "nextup",
+  "version": "1.0.0",
+  "description": "heroku ",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix api",
+    "start": "./Taskfile.sh heroku"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swadhinroutray/NextUp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swadhinroutray/NextUp/issues"
+  },
+  "homepage": "https://github.com/swadhinroutray/NextUp#readme"
+}
